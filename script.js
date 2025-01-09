@@ -107,4 +107,98 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         navLinks.classList.remove('active');
         navToggle.classList.remove('active');
     });
+});
+
+// Theme Switcher
+const themeSwitch = document.querySelector('#checkbox');
+const body = document.body;
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    body.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'light') {
+        themeSwitch.checked = true;
+    }
+}
+
+themeSwitch.addEventListener('change', function () {
+    if (this.checked) {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+});
+
+// EmailJS initialization
+(function () {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+})();
+
+// Contact Form Handler
+const contactForm = document.querySelector('#contact-form');
+contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Show loading state
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Send email using EmailJS
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        })
+        .catch((error) => {
+            alert('Oops! Something went wrong. Please try again later.');
+            console.error('EmailJS Error:', error);
+        })
+        .finally(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
+});
+
+// Newsletter Form Handler
+const newsletterForm = document.querySelector('#newsletter-form');
+newsletterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    // Here you would typically send the email to a newsletter service
+    alert('Thank you for subscribing to my newsletter!');
+    this.reset();
+});
+
+// Parallax Effect
+window.addEventListener('scroll', function () {
+    const parallaxSections = document.querySelectorAll('.parallax');
+    parallaxSections.forEach(section => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.5;
+        section.style.backgroundPositionY = rate + 'px';
+    });
+});
+
+// Add fade-in-up animation to elements when they come into view
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.project-card, .contact-form, .newsletter-form').forEach(el => {
+    observer.observe(el);
 }); 

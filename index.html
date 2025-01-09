@@ -7,6 +7,7 @@
     <title>Personal Blog</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,7 @@
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#career">Career</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#cv">CV</a></li>
                 <li><a href="#blog">Blog</a></li>
@@ -99,14 +101,14 @@
 
             <div class="timeline-item">
                 <h3>ELECTRICAL ENGINEER - Eigen</h3>
-                <p class="date">February 2022 - September 2022</p>
+                <p class="date">July 2022 - May 2023</p>
                 <p>I served as an electrical engineer on the TurkStream project, overseeing operations, conducting
                     maintenance, and managing the design and lightning protection of power transmission lines.</p>
             </div>
 
             <div class="timeline-item">
                 <h3>SOFTWARE TEST ENGINEER - Egemsoft</h3>
-                <p class="date">July 2021 - February 2022</p>
+                <p class="date">May 2022 - November 2024</p>
                 <p>Creating test scenarios, collaborating with the development team for project management, and
                     ensuring product reliability.</p>
             </div>
@@ -155,72 +157,114 @@
         </div>
     </section>
 
-    <section id="cv" class="section">
-        <h2>CV</h2>
-        <div class="cv-content">
-            <div class="cv-section">
-                <h3>Education</h3>
-                <div class="education-item">
-                    <h4>Electrical and Electronics Engineering</h4>
-                    <p>Bachelor's Degree - Atatürk University</p>
-                    <p>2017 - 2022</p>
+    <section id="portfolio" class="section portfolio-section">
+        <h2>Portfolio</h2>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+            <em>Dark Mode</em>
+        </div>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-front">
+                        <img src="https://images.unsplash.com/photo-1543968996-ee822b8176ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                            alt="Base Station Project">
+                        <h3>Base Station Communication Systems</h3>
+                    </div>
+                    <div class="project-back">
+                        <h3>Base Station Communication Systems</h3>
+                        <p>Development and optimization of advanced Base Station Communication Systems, focusing on
+                            power
+                            distribution networks and signal processing.</p>
+                        <div class="project-tech">
+                            <span>RF Design</span>
+                            <span>Power Systems</span>
+                            <span>Signal Processing</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
                 </div>
             </div>
-            <div class="cv-section">
-                <h3>Certificates & Training</h3>
-                <ul class="skills-list">
-                    <li>AS9100 Aviation Quality Management System</li>
-                    <li>EASA Part 66 - Aviation Maintenance License</li>
-                    <li>DO-178C Aviation Software Certification</li>
-                    <li>NASA Systems Engineering Fundamentals</li>
-                    <li>Space Systems and Satellite Technologies</li>
-                    <li>Aviation Electronics (Avionic Systems)</li>
-                    <li>Composite Materials and Advanced Manufacturing Technologies</li>
-                    <li>Space Environment and Radiation Effects</li>
-                    <li>Advanced English (Aviation Terminology)</li>
-                    <li>Project Management Professional (PMP)</li>
-                </ul>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-front">
+                        <img src="https://images.unsplash.com/photo-1565617882126-61d6674ed085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                            alt="Avionics Project">
+                        <h3>Avionics Integration</h3>
+                    </div>
+                    <div class="project-back">
+                        <h3>Avionics Integration</h3>
+                        <p>Implementation of state-of-the-art avionics systems for modern aircraft, including electrical
+                            infrastructure and testing protocols.</p>
+                        <div class="project-tech">
+                            <span>Avionics</span>
+                            <span>System Integration</span>
+                            <span>Testing</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
             </div>
-            <div class="cv-section">
-                <h3>Technical Skills</h3>
-                <ul class="skills-list">
-                    <li>Avionic System Design and Integration</li>
-                    <li>Satellite Power Systems</li>
-                    <li>Spacecraft Electrical Systems</li>
-                    <li>EMI/EMC Testing and Analysis</li>
-                    <li>ARINC 429/629 Protocols</li>
-                    <li>Thermal Control Systems</li>
-                    <li>MATLAB/Simulink</li>
-                    <li>CAD/CAM (CATIA, SolidWorks)</li>
-                    <li>Systems Engineering Tools</li>
-                    <li>Space Qualification Testing</li>
-                </ul>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-front">
+                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                            alt="EV Charger Project">
+                        <h3>EV Charger & Vehicle Electronics</h3>
+                    </div>
+                    <div class="project-back">
+                        <h3>EV Charger & Vehicle Electronics</h3>
+                        <p>Design and implementation of robust electrical systems for EV exploration vehicles,
+                            ensuring reliability in extreme conditions.</p>
+                        <div class="project-tech">
+                            <span>Micro & Macro Electronics</span>
+                            <span>Control Systems</span>
+                            <span>Reliability</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
             </div>
-            <a href="assets/gokberk-sogut-resume.pdf" class="download-cv" download>Download CV</a>
         </div>
     </section>
 
-    <section id="blog" class="section">
-        <h2>Blog</h2>
-        <div class="blog-grid">
-            <article class="blog-post">
-                <h3>Electrical Systems in Spacecraft</h3>
-                <p class="date">January 20, 2024</p>
-                <p>Electrical systems used in modern spacecraft, power management, and innovative solutions...</p>
-                <a href="#" class="read-more">Read More</a>
-            </article>
-            <article class="blog-post">
-                <h3>Digital Transformation in Aviation Industry</h3>
-                <p class="date">January 15, 2024</p>
-                <p>Use of digital technologies in the aviation sector and Industry 4.0 applications...</p>
-                <a href="#" class="read-more">Read More</a>
-            </article>
-            <article class="blog-post">
-                <h3>Satellite Communication Systems</h3>
-                <p class="date">January 10, 2024</p>
-                <p>Working principles of satellite communication systems and future technological developments...</p>
-                <a href="#" class="read-more">Read More</a>
-            </article>
+    <section id="contact" class="section contact-section">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-container">
+                <h2>Get in Touch</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="from_name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="from_email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Newsletter Form -->
+            <div class="newsletter-container">
+                <h2>Subscribe to Newsletter</h2>
+                <p>Stay updated with my latest projects and articles</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" name="email" required>
+                        <label for="newsletter-email">Your Email</label>
+                    </div>
+                    <button type="submit" class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
         </div>
     </section>
 
